@@ -49,7 +49,7 @@ public class Decryptor {
 					dec = new File(decPath + File.separator + decName);
 					
 					if (isBase64(encName) || isBase64(encName.substring(0, encName.length() - 1))) {
-						Process p = Runtime.getRuntime().exec("cp " + encName + " a" + decName);
+						Process p = Runtime.getRuntime().exec("cp " + encName + " " + Decryptor.prefix + decName);
 						p.waitFor();
 						System.out.println("Decrypting " + encName + " name to " + Decryptor.prefix + decName + ".");
 					}
